@@ -18,7 +18,7 @@ void gc_collect(GarbageCollector *gc, size_t gc_grow_factor) {
             gc->objects[valid_objects++] = gc->objects[i];
             gc->objects[i]->marked = 0;
         } else {
-            gc_free(gc->objects[i]); // Освобождаем непомеченные объекты
+            free(gc->objects[i]); // Освобождаем непомеченные объекты
         }
     }
 
