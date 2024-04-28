@@ -1,0 +1,3 @@
+E:/offic/Documents/GitHub/garbage_collector/cmake-build-debug/CMakeFiles/garbage_collector.dir
+E:/offic/Documents/GitHub/garbage_collector/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/offic/Documents/GitHub/garbage_collector/cmake-build-debug/CMakeFiles/rebuild_cache.dir

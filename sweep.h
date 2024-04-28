@@ -1,4 +1,3 @@
-// sweep.h
 #pragma once
 
 #include "garbage_collector.h"

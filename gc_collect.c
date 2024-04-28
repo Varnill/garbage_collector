@@ -1,5 +1,7 @@
 #include "garbage_collector.h"
 #include "stdlib.h"
+#include "stdio.h"
+
 void gc_collect(GarbageCollector *gc, size_t gc_grow_factor) {
     // Пройдемся по всем объектам в gc и пометим их
     for (size_t i = 0; i < gc->object_count; ++i) {
@@ -25,7 +27,15 @@ void gc_collect(GarbageCollector *gc, size_t gc_grow_factor) {
     // Обновляем количество объектов и размер буфера объектов
     gc->object_count = valid_objects;
     if (gc->object_count < gc->threshold / gc_grow_factor) {
-        gc->threshold /= gc_grow_factor;
-        gc->objects = realloc(gc->objects, gc->threshold * sizeof(Object *));
+        size_t new_threshold = gc->threshold / gc_grow_factor;
+        Object **temp_objects = realloc(gc->objects, new_threshold * sizeof(Object *));
+        if (temp_objects) {
+            gc->threshold = new_threshold;
+            gc->objects = temp_objects;
+        } else {
+            // Обработка ситуации, когда realloc завершился неудачно.
+            fprintf(stderr, "Ошибка выделения памяти.\n");
+            exit(EXIT_FAILURE);
+        }
     }
 }
