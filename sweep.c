@@ -1,4 +1,3 @@
-// sweep.c
 #include "sweep.h"
 #include <stdlib.h>
 
@@ -9,7 +8,7 @@ void sweep(GarbageCollector *gc, size_t gc_grow_factor) {
     for (size_t i = 0; i < gc->object_count; ++i) {
         // Приведем указатель к типу Object *
         if (((Object *)gc->objects[i])->marked) {
-            gc_free(gc->objects[i]);
+            free(gc->objects[i]);
         } else {
             gc->objects[valid_objects++] = gc->objects[i];
         }
@@ -28,5 +27,6 @@ void sweep(GarbageCollector *gc, size_t gc_grow_factor) {
         ((Object *)gc->objects[i])->marked = 0;
     }
 }
+
 
 
