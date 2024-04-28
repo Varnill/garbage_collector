@@ -1,0 +1,5 @@
+# ninja log v5
+6	609	7360371383109278	CMakeFiles/garbage_collector.dir/garbage_collector.c.obj	6f655f011d1f11df
+1	615	7360371383149286	CMakeFiles/garbage_collector.dir/gc_collect.c.obj	9d1843d565a48c4b
+10	610	7360371383109278	CMakeFiles/garbage_collector.dir/sweep.c.obj	c09f9b7d53cb3cd5
+14	614	7360371383149286	CMakeFiles/garbage_collector.dir/main.c.obj	31cbc54142dd6356

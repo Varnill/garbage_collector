@@ -1,25 +1,21 @@
 #pragma once
 
-#include <stddef.h>
+#include <stdlib.h>
 
-// Структура объекта
+#define INITIAL_GC_THRESHOLD 10
+
 typedef struct {
-    size_t marked; // Помечен ли объект для сохранения
-    // Добавьте другие поля объекта здесь
+    size_t marked;
 } Object;
 
-// Структура сборщика мусора
-typedef struct GarbageCollector {
-    size_t threshold; // Порог сборки мусора
-    size_t allocated; // Количество выделенной памяти
-    Object **objects; // Массив указателей на объекты
-    size_t object_count; // Количество объектов
-    size_t gc_grow_factor;
+typedef struct {
+    size_t threshold;
+    size_t allocated;
+    Object **objects;
+    size_t object_count;
 } GarbageCollector;
 
-// Инициализация сборщика мусора
+extern GarbageCollector gc;
+
 void gc_init();
-
-// Функция выделения памяти с автоматическим сборщиком мусора
 void *gc_malloc(size_t size);
-

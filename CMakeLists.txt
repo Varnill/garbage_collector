@@ -12,4 +12,6 @@ add_executable(garbage_collector
         gc_collect.h
         main.c
         sweep.c
-        sweep.h)
+        sweep.h
+        gc_init.c
+        gc_malloc.c)
