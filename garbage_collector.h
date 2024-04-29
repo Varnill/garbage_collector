@@ -15,7 +15,7 @@ typedef struct {
     size_t object_count;
 } GarbageCollector;
 
-extern GarbageCollector gc;
+extern GarbageCollector gc; // Объявление переменной gc как extern
 
 void gc_init();
 void *gc_malloc(size_t size);

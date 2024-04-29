@@ -1,6 +1,4 @@
 #include "garbage_collector.h"
-#include "gc_collect.h"
-#include <stdlib.h>
 
 void gc_init() {
     gc.threshold = INITIAL_GC_THRESHOLD;

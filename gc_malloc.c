@@ -1,5 +1,4 @@
 #include "garbage_collector.h"
-#include "gc_collect.h"
 #include <stdlib.h>
 
 void *gc_malloc(size_t size) {
